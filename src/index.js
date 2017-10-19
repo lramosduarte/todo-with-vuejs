@@ -12,8 +12,12 @@ let apps = new Vue({
                 descricao: this.descricaoTarefa,
                 id: String(Math.random()).substring(2,5)
             };
-            this.listaTarefas.push(novaTarefa)
-            this.descricaoTarefa = ''
+            this.listaTarefas.push(novaTarefa);
+            this.descricaoTarefa = '';
+        },
+        deletaTarefa: function(indiceTarefa) {
+            this.listaTarefas.splice(indiceTarefa, 1);
+            this.$refs.entradaTexto.focus()
         }
     }
 })
