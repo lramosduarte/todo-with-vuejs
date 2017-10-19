@@ -6,7 +6,12 @@
     </head>
     <body>
         <div class="app" id="app">
-
+            <input type="text" placeholder="Digite uma nova tarefa"
+                v-on:keyup.enter="adicionaTarefa" v-model="descricaoTarefa">
+            <ul v-for="tarefa in listaTarefas">
+                <li v-bind:key="tarefa.id">{{ tarefa.descricao }}</li>
+                <button type="button">X</button>
+            </ul>
         </div>
 
         <script src="bundle.js"></script>
