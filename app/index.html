@@ -6,15 +6,12 @@
     </head>
     <body>
         <div class="app" id="app">
-            <input type="text" ref="entradaTexto" placeholder="Digite uma nova tarefa"
-                v-on:keyup.enter="adicionaTarefa" v-model="descricaoTarefa">
-            <ul v-for="(tarefa, indice) in listaTarefas">
-                <li v-bind:key="tarefa.id">{{ tarefa.descricao }}
-                    <button v-on:click="deletaTarefa(indice)">X</button>
-                </li>
-            </ul>
+            <adicionar-tarefa ref="entradaTexto"></adicionar-tarefa>
+            <todo-list
+                name="lista-tarefas"
+                v-bind:tarefas="listaTarefas">
+            </todo-list>
         </div>
-
         <script src="bundle.js"></script>
     </body>
 </html>
